@@ -1,17 +1,12 @@
-import { React } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
+let date = new Date();
 ReactDOM.render(
-    <>
-        <h1>My Netflix Pick</h1>
-        <p>List of 5 Best Movies</p>
-        <ol>
-            <li>Extraction</li>
-            <li>13 hours</li>
-            <li>Ambulance</li>
-            <li>Red Notice</li>
-            <li>6 Underground</li>
-        </ol>
-    </>,
+    <div>
+        <h1>My Name is Santosh Marar</h1>
+        <p>Today Date is {date.toDateString()}</p>
+        <p>Current Time is {date.toLocaleTimeString()}</p>
+    </div>,
     document.getElementById("root")
 )

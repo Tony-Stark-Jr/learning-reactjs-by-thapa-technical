@@ -1,28 +1,20 @@
 import React from 'react'
 import './App.css'
+import { add, subtract, multiply, division } from './Calculator'
 
 
 
 function App() {
 
-    let curDate = new Date();
-    curDate = curDate.getHours();
-    let greeting = "";
-    let cssStyle = {};
-    if (curDate >= 1 && curDate < 12) {
-        greeting = "Good Morning"
-        cssStyle.color = "green"
-    } else if (curDate >= 12 && curDate < 20) {
-        greeting = "Good Afternoon"
-        cssStyle.color = "orange"
-
-    } else {
-        greeting = "Good Night"
-    }
 
     return (
         <>
-            <h1 style={{color:""}}>Hello Sir, <span style={cssStyle}>{greeting}</span></h1>
+            <ul>
+                <li>Sum of two no. is: {add(30, 5)}</li>
+                <li>Subtract of two no. is: {subtract(30, 5)}</li>
+                <li>Multiply of two no. is: {multiply(30, 5)}</li>
+                <li>Divison of two no. is: {division(30, 5)}</li>
+            </ul>
         </>)
 }
 

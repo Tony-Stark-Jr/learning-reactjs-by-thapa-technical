@@ -5,18 +5,25 @@ import "./App.css"
 
 export default function App() {
 
-    let [num, add] = useState(1)
 
-    const IncNum = () => {
-        add(num++)
+    let date = new Date();
+    let currentTime = date.toLocaleTimeString()
+
+
+    // eslint-disable-next-line
+    const [time, setTime] = useState(currentTime)
+
+    const getCurrentTime = () => {
+    //    setInterval(() => {
+        setTime(currentTime)
+    //    }, 1000);
     }
-
 
     return (
         <>
             <div className='main'>
-                <h1>{num}</h1>
-                <button onClick={IncNum}>Click Me</button>
+                <h1>{currentTime}</h1>
+                <button onClick={getCurrentTime}>Click Me</button>
             </div>
         </>
     )

@@ -24,7 +24,7 @@ export default function App() {
     return (
         <>
             <div className='main'>
-                <h1>{time}</h1>
+                <h1>{currentTime}</h1>
                 {/* <button onClick={getCurrentTime}>Click Me</button> */}
             </div>
         </>

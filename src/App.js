@@ -13,17 +13,19 @@ export default function App() {
     // eslint-disable-next-line
     const [time, setTime] = useState(currentTime)
 
+    // eslint-disable-next-line
     const getCurrentTime = () => {
-    //    setInterval(() => {
-        setTime(currentTime)
-    //    }, 1000);
     }
+
+    setInterval(() => {
+        setTime(currentTime)
+       }, 1000);
 
     return (
         <>
             <div className='main'>
-                <h1>{currentTime}</h1>
-                <button onClick={getCurrentTime}>Click Me</button>
+                <h1>{time}</h1>
+                {/* <button onClick={getCurrentTime}>Click Me</button> */}
             </div>
         </>
     )

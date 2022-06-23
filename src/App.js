@@ -1,32 +1,33 @@
 import React, { useState } from 'react'
-import "./App.css"
+import './App.css'
 
+function App() {
 
+    const purple = '#8e44ad';
+    const yellow = 'yellow'
 
-export default function App() {
+    const iName = "Click Me"
 
+    const [bg, setBg] = useState(purple)
+    const [name, setName] = useState(iName);
 
-    let date = new Date();
-    let currentTime = date.toLocaleTimeString()
-
-
-    // eslint-disable-next-line
-    const [time, setTime] = useState(currentTime)
-
-    // eslint-disable-next-line
-    const getCurrentTime = () => {
+    const bgChange = () => {
+        setBg(yellow)
+        setName("Aeey 😠")
     }
 
-    setInterval(() => {
-        setTime(currentTime)
-       }, 1000);
+    const bgBack = () => {
+        setBg(purple)
+        setName(iName)
+    }
 
     return (
         <>
-            <div className='main'>
-                <h1>{currentTime}</h1>
-                {/* <button onClick={getCurrentTime}>Click Me</button> */}
+            <div className="main" style={{ backgroundColor: bg }}>
+                <button onClick={bgChange} onDoubleClick={bgBack}>{name}</button>
             </div>
         </>
     )
 }
+
+export default App

@@ -2,29 +2,24 @@ import React, { useState } from 'react'
 import './App.css'
 
 function App() {
+    // eslint-disable-next-line
+    let [name, setName] = useState("")
+    let [fullName, setFullName] = useState()
 
-    const purple = '#8e44ad';
-    const yellow = 'yellow'
-
-    const iName = "Click Me"
-
-    const [bg, setBg] = useState(purple)
-    const [name, setName] = useState(iName);
-
-    const bgChange = () => {
-        setBg(yellow)
-        setName("Aeey 😠")
+    let inputEvent = (event) => {
+        setName = (event.target.value)
     }
 
-    const bgBack = () => {
-        setBg(purple)
-        setName(iName)
+    let onSubmit=()=>{
+        setFullName(name)
     }
 
     return (
         <>
-            <div className="main" style={{ backgroundColor: bg }}>
-                <button onClick={bgChange} onDoubleClick={bgBack}>{name}</button>
+            <div className='main'>
+                <h1>Hello {fullName}</h1>
+                <input type="text" name="name" id="name" placeholder='Enter your Name' onChange={inputEvent} value={name} />
+                <button onClick={onSubmit}>Click Me 😃</button>
             </div>
         </>
     )

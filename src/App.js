@@ -2,24 +2,39 @@ import React, { useState } from 'react'
 import './App.css'
 
 function App() {
-    // eslint-disable-next-line
-    let [name, setName] = useState("")
-    let [fullName, setFullName] = useState()
 
-    let inputEvent = (event) => {
-        setName = (event.target.value)
+    const [num, setNum] = useState(0);
+
+
+    const increase = () => {
+        setNum(() => {
+            return num + 1
+        })
     }
 
-    let onSubmit=()=>{
-        setFullName(name)
+    const decrease = () => {
+        if (num > 0) {
+            setNum(() => {
+                return num - 1
+            })
+        }
+        else {
+            alert("Sorry, Zero Limit Reach")
+            setNum(0)
+        }
     }
+
 
     return (
         <>
-            <div className='main'>
-                <h1>Hello {fullName}</h1>
-                <input type="text" name="name" id="name" placeholder='Enter your Name' onChange={inputEvent} value={name} />
-                <button onClick={onSubmit}>Click Me 😃</button>
+            <div className="main">
+                <div className="center-box">
+                    <div className="num">{num}</div>
+                    <div className="buttons">
+                        <button className="increm" onClick={increase}>Increm</button>
+                        <button className="decrem" onClick={decrease}>Decrem</button>
+                    </div>
+                </div>
             </div>
         </>
     )
